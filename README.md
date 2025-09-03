@@ -132,30 +132,7 @@ Generates AI-powered recipes based on provided ingredients.
 - **Dark Theme**: Modern glassmorphism design
 - **Animations**: Smooth transitions and hover effects
 
-## 🛠️ Configuration
 
-### Environment Variables
-
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `GOOGLE_API_KEY` | Your Google Gemini API key | Yes |
-| `PORT` | Server port (default: 5000) | No |
-
-### Customization
-
-You can customize the application by modifying:
-
-- **Ingredients List**: Edit `DEFAULT_INGREDIENTS` in `static/app.js`
-- **Styling**: Modify CSS variables in `static/style.css`
-- **AI Prompt**: Update the prompt template in `app.py`
-- **Fallback Recipes**: Customize mock recipes in `_fallback_recipes()`
-
-## 🔒 Security Considerations
-
-- **API Key**: Store your Gemini API key in environment variables
-- **Input Validation**: All user inputs are sanitized and validated
-- **Rate Limiting**: Consider implementing rate limiting for production use
-- **CORS**: Configure CORS settings for your deployment environment
 
 ## 🚀 Deployment
 
