@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Recipe Generator</title>
+	<link rel="stylesheet" href="/static/style.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="app-header">
+		<h1>Smart Recipe Generator</h1>
+		<p>Select your ingredients to create delicious recipes.</p>
+	</header>
+
+	<main class="container">
+		<!-- Single Row Input Section -->
+		<section class="single-row-input">
+			<div class="card input-card search-card">
+				<div class="card-header">
+					<h3>🔍 Search</h3>
+					<p class="muted">Find ingredients</p>
+				</div>
+				<div class="search-container">
+					<input type="text" id="ingredient-search" placeholder="Type ingredient..." autocomplete="off" />
+					<button id="search-clear" class="search-clear" aria-label="Clear search" title="Clear">×</button>
+					<div class="search-suggestions" id="search-suggestions"></div>
+				</div>
+			</div>
+
+			<div class="card input-card presets-card">
+				<div class="card-header">
+					<h3>⚡ Quick Combos</h3>
+					<p class="muted">Popular combinations</p>
+				</div>
+				<div class="preset-buttons">
+					<button class="preset-btn" data-ingredients="pasta,tomato,garlic,olive oil,cheese">
+						<span class="preset-icon">🍝</span>
+						<span class="preset-text">Pasta</span>
+					</button>
+					<button class="preset-btn" data-ingredients="chicken,rice,onion,garlic,carrot">
+						<span class="preset-icon">🍗</span>
+						<span class="preset-text">Stir Fry</span>
+					</button>
+					<button class="preset-btn" data-ingredients="beef,potato,onion,carrot,garlic">
+						<span class="preset-icon">🥩</span>
+						<span class="preset-text">Comfort</span>
+					</button>
+					<!-- <button class="preset-btn" data-ingredients="fish,lemon,garlic,olive oil,spinach">
+						<span class="preset-icon">🐟</span>
+						<span class="preset-text">Fish</span>
+					</button> -->
+					<button class="preset-btn" data-ingredients="egg,cheese,milk,butter,spinach">
+						<span class="preset-icon">🍳</span>
+						<span class="preset-text">Breakfast</span>
+					</button>
+				</div>
+			</div>
+
+			<div class="card input-card selected-card">
+				<div class="card-header">
+					<h3>✅ Selected</h3>
+					<p class="muted">Your ingredients</p>
+				</div>
+				<div class="selected-ingredients" id="selected-chips">
+					<!-- Selected ingredients as chips -->
+				</div>
+				<div class="actions">
+					<button id="generate-btn" class="btn primary full-width">
+						<span class="btn-icon">✨</span>
+						Generate
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Results Section -->
+		<section class="results-section">
+			<div class="card results-card">
+				<div class="results-header">
+					<h2>🍽️ Suggested Recipes</h2>
+					<div class="results-controls">
+						<button id="expand-all" class="btn secondary">Expand All</button>
+						<button id="favorites-btn" class="btn secondary">Favorites</button>
+						<div id="loading" class="spinner hidden" aria-label="Loading"></div>
+					</div>
+				</div>
+				<div id="error" class="error hidden"></div>
+				<div id="results" class="results-grid"></div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="app-footer">
+		<p class="muted">Demo app</p>
+	</footer>
+
+	<!-- Loading overlay -->
+	<div id="loading-overlay" class="loading-overlay hidden">
+		<div class="loading-content">
+			<div class="spinner large"></div>
+			<p>Generating delicious recipes...</p>
+		</div>
+	</div>
+	
+	
+
+	<!-- Toast container -->
+	<div id="toast-container" class="toast-container"></div>
+
+	<script src="/static/app.js?v=29"></script>
+</body>
+</html>
+
+
