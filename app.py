@@ -14,7 +14,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Hardcoded API key (replace with your actual key)
-GOOGLE_API_KEY = "AIzaSyCMX4sOIAJAicpTbfpAZ2jGatJCNJ-Rkfk"
+GOOGLE_API_KEY = ""
 
 
 def create_app() -> Flask:
